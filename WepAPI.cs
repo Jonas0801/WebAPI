@@ -46,7 +46,6 @@ public class WepAPI : MonoBehaviour
         {
             string responseUrl = uwr.downloadHandler.text.Trim('"');
             Debug.Log("Upload complete!\n" + responseUrl);
-            //StartCoroutine(DownloadTexture2D(uwr.downloadHandler.text.Trim('"')));
         }
     }
 
