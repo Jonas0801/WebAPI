@@ -4,11 +4,6 @@ using UnityEngine.Networking;
 
 public class WepAPI : MonoBehaviour
 {
-    /// <summary>
-    /// 圖片轉換
-    /// </summary>
-    /// <param name="_tex2D"></param>
-    /// <returns></returns>
     private byte[] Texture2dToBytes(Texture2D _tex2D)
     {
         RenderTexture renderTex = RenderTexture.GetTemporary(
@@ -32,11 +27,6 @@ public class WepAPI : MonoBehaviour
         return bytes;
     }
 
-    /// <summary>
-    /// 上傳圖片
-    /// </summary>
-    /// <param name="bytes"></param>
-    /// <returns></returns>
     private IEnumerator UploadTexture2D(byte[] bytes, string fileName, string url)
     {
         WWWForm postForm = new WWWForm();
@@ -60,11 +50,6 @@ public class WepAPI : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 下載圖片
-    /// </summary>
-    /// <param name="url"></param>
-    /// <returns></returns>
     private IEnumerator DownloadTexture2D(string responseUrl, UNetPlayer uNetPlayer = null)
     {
         using (UnityWebRequest uwr = UnityWebRequestTexture.GetTexture(responseUrl))
